@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine Surprise for Starlight</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            color: white;
+        }
+        .container {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        #typewriter {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            background: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        #surpriseButton {
+            background: #ff4e50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <canvas id="heartCanvas"></canvas>
+        <h1 id="valentineMessage">Happy Valentine's Day, Starlight! ✨❤️</h1>
+        <p id="typewriter"></p>
+        <button id="surpriseButton">Click for a Surprise</button>
+    </div>
+    
+    <div id="loveModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Dear Starlight,</h2>
+            <p>You are the sparkle in my universe, the light in my darkest nights...</p>
+        </div>
+    </div>
+
+    <script>
+        const messages = [
+            "My love for you is infinite...",
+            "You are my dream come true...",
+            "Every heartbeat of mine whispers your name..."
+        ];
+        let index = 0;
+        const typewriter = document.getElementById("typewriter");
+        function typeMessage() {
+            if (index < messages.length) {
+                typewriter.innerHTML = messages[index];
+                index++;
+                setTimeout(typeMessage, 3000);
+            }
+        }
+        typeMessage();
+
+        const modal = document.getElementById("loveModal");
+        const btn = document.getElementById("surpriseButton");
+        const span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function() {
+            modal.style.display = "flex";
+        }
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+        window.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
