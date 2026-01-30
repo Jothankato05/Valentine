@@ -153,6 +153,34 @@
             </div>
         </section>
 
+        <!-- Emotional Journey Phase (Hidden) -->
+        <section id="gift-phase" class="hidden space-y-6 animate-in fade-in slide-in-from-bottom duration-1000">
+            <h2 class="text-2xl font-pacifico text-rose-600">The Greatest Gift</h2>
+            <div
+                class="space-y-4 text-rose-700 text-left bg-white/40 p-6 rounded-2xl border border-rose-200 shadow-inner">
+                <p class="font-medium italic leading-relaxed">
+                    "I know I didn't come with a box tied in a ribbon today, but I wanted to give you something that
+                    never fades, never breaks, and only grows stronger with every breath I take."
+                </p>
+                <p class="text-sm">
+                    My real gift to you is my total devotion, my promise to be your safest harbor, and the truth that my
+                    life only truly began the moment I met you. You are more than a world to me; you are my home.
+                </p>
+            </div>
+
+            <div id="reason-box"
+                class="p-6 glass rounded-2xl cursor-pointer transform transition hover:scale-105 active:scale-95 border-2 border-rose-300">
+                <p class="text-rose-500 text-sm mb-2 uppercase tracking-widest font-bold">Tap for a reason why</p>
+                <div id="reason-text"
+                    class="text-xl font-semibold text-rose-700 font-pacifico min-h-[60px] flex items-center justify-center">
+                    You're the center of my universe.
+                </div>
+            </div>
+
+            <button id="restartBtn" class="text-rose-400 text-sm hover:underline mt-4">See the celebration
+                again</button>
+        </section>
+
         <section id="success-phase" class="hidden space-y-6 animate-in fade-in zoom-in duration-1000">
             <div class="relative w-64 h-64 mx-auto rounded-3xl overflow-hidden border-8 border-rose-300 shadow-2xl">
                 <img src="./valentine_celebration.png" alt="Celebration Cats" class="w-full h-full object-cover">
@@ -166,6 +194,11 @@
                 class="bg-rose-50 p-6 rounded-2xl border border-rose-200 italic text-rose-700 text-lg leading-relaxed shadow-inner min-h-[100px]">
                 <span id="typewriter-text"></span><span class="animate-pulse">|</span>
             </div>
+
+            <button id="showGiftBtn"
+                class="w-full py-3 bg-rose-500 text-white font-bold rounded-xl shadow-lg hover:bg-rose-600 transition-colors">
+                Wait, I have one more thing...
+            </button>
 
             <div class="text-pink-400 font-medium animate-bounce mt-4">
                 Forever yours!
@@ -350,6 +383,53 @@
                 shapes: ['circle'],
                 colors: ['#ff0000', '#ff69b4', '#ff1493']
             });
+        });
+
+        // Gift Phase Interactions
+        const showGiftBtn = document.getElementById('showGiftBtn');
+        const giftPhase = document.getElementById('gift-phase');
+        const reasonBox = document.getElementById('reason-box');
+        const reasonText = document.getElementById('reason-text');
+        const restartBtn = document.getElementById('restartBtn');
+
+        const reasons = [
+            "The way your eyes sparkle when you're happy.",
+            "How you make the hardest days feel easy.",
+            "Your kindness toward everyone you meet.",
+            "The way you believe in me even when I don't.",
+            "Your laugh is my favorite soundtrack.",
+            "How you know exactly what I'm thinking.",
+            "Your strength and your beautiful heart.",
+            "Simply because you are YOU."
+        ];
+
+        showGiftBtn.addEventListener('click', () => {
+            successPhase.classList.add('hidden');
+            giftPhase.classList.remove('hidden');
+            mainContainer.classList.add('max-w-lg'); // Expand for better reading
+        });
+
+        reasonBox.addEventListener('click', () => {
+            const currentReason = reasonText.innerText;
+            let newReason = reasons[Math.floor(Math.random() * reasons.length)];
+            while (newReason === currentReason) {
+                newReason = reasons[Math.floor(Math.random() * reasons.length)];
+            }
+
+            reasonText.style.opacity = 0;
+            setTimeout(() => {
+                reasonText.innerText = newReason;
+                reasonText.style.opacity = 1;
+                createHeart(); // Extra heart on tap
+            }, 200);
+        });
+
+        reasonText.style.transition = 'opacity 0.2s ease';
+
+        restartBtn.addEventListener('click', () => {
+            giftPhase.classList.add('hidden');
+            successPhase.classList.remove('hidden');
+            mainContainer.classList.remove('max-w-lg');
         });
     </script>
 </body>

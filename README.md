@@ -1,14 +1,17 @@
-# 💖 Valentine's Surprise Experience
+# Valentine's Surprise Experience
 
-An advanced, highly interactive Valentine's Day web experience built with **Tailwind CSS**, designed to impress.
+An advanced, highly interactive Valentine's Day web experience built with Tailwind CSS, designed to impress.
 
-## ✨ Features
+## Features
 
 - **Premium Glassmorphism Design**: A modern, sleek UI with smooth gradients and backdrop filters.
 - **Dynamic Interactivity**:
   - **The Untouchable No Button**: A button that cleverly dodges the cursor with custom persuasive messages.
   - **Growing Yes Button**: The "Yes" button grows larger with every failed attempt to click "No".
   - **Love Meter**: An interactive slider that reacts with heart bursts and a special effect at 100%.
+- **Emotional Journey Integration**:
+  - **The Greatest Gift Module**: A heartfelt reflection section explaining the deep value of the relationship, ideal for cases where a physical gift isn't present.
+  - **Interactive Reasons Why Heart**: A tap-to-reveal module showing custom reasons for devotion.
 - **Rich Visuals & Effects**:
   - **Floating Heart Particles**: Continuous heart animations drifting upward.
   - **Falling Rose Petals**: A second layer of atmospheric background animation.
@@ -17,7 +20,7 @@ An advanced, highly interactive Valentine's Day web experience built with **Tail
 - **Musical Atmosphere**: A floating music toggle with rotating vinyl-style animation.
 - **AI-Generated Assets**: Custom 3D-rendered kitten imagery for a unique, high-quality feel.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **HTML5 & Semantic Tags**
 - **JavaScript (Vanilla JS)**
@@ -25,16 +28,16 @@ An advanced, highly interactive Valentine's Day web experience built with **Tail
 - **Canvas Confetti API**
 - **Google Fonts** (Pacifico & Inter)
 
-## 🚀 How to Use
+## How to Use
 
-Simply open `index.html` in any modern web browser.
+Simply open index.html in any modern web browser.
 
 1.  **Set the Mood**: Click the music icon in the top right.
 2.  **Test the Love**: Move the love slider to see the reactions.
 3.  **The Question**: Try clicking "No", or go straight for the big "YES".
-4.  **Enjoy the Celebration!**
+4.  **The True Surprise**: After the celebration, click "Wait, I have one more thing..." to reveal the deep emotional gift.
 
-## 📂 Project Structure
+## Project Structure
 
 - `index.html`: The main interactive application.
 - `valentine_hero_cat.png`: Custom hero image.
@@ -42,4 +45,4 @@ Simply open `index.html` in any modern web browser.
 - `README.md`: Project documentation.
 
 ---
-*Created with ❤️ for a special Valentine's Day.*
+*Created for a special Valentine's Day.*
